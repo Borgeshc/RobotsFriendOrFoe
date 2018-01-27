@@ -479,6 +479,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 320
   ground: {fileID: 0}
+  isDead: 0
 --- !u!54 &1067501812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -503,6 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293752003}
   - component: {fileID: 1293752002}
+  - component: {fileID: 1293752004}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -545,6 +547,18 @@ Transform:
   m_Father: {fileID: 1303843266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1293752004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293752001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851054baa7d3e9f449adef151efd68a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walker: {fileID: 0}
 --- !u!1 &1303843262
 GameObject:
   m_ObjectHideFlags: 0

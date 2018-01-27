@@ -9,6 +9,7 @@ public class AutoMove : MonoBehaviour
     public float speed = 3;
     public float jumpForce = 300;
     public Transform ground;
+    public bool isDead = false;
 
     bool grounded = true;
     Rigidbody rb;
@@ -20,12 +21,15 @@ public class AutoMove : MonoBehaviour
 	
 	void Update ()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
+        if(!isDead)
         {
-            rb.AddForce(Vector3.up * jumpForce);
-            grounded = false;
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                rb.AddForce(Vector3.up * jumpForce);
+                grounded = false;
+            }
         }
 	}
 
@@ -36,5 +40,15 @@ public class AutoMove : MonoBehaviour
             ground = col.gameObject.transform;
             grounded = true;
         }
+
+        if(col.gameObject.tag == "Wall" || col.gameObject.tag == "Duckable")
+        {
+            Death();
+        }
+    }
+
+    public void Death()
+    {
+        isDead = true;
     }
 }
