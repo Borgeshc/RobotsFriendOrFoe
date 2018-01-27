@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 65662462864878152}
   - component: {fileID: 23463046143660544}
   m_Layer: 0
-  m_Name: WallObj
-  m_TagString: Wall
+  m_Name: DuckObj
+  m_TagString: Duckable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850489223067770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: -2.59}
+  m_LocalPosition: {x: 0, y: -0.1, z: -2.59}
   m_LocalScale: {x: 1, y: 1.5, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3a16fa1e3711c1e4f9e3f40f44088bd8, type: 2}
+  - {fileID: 2100000, guid: 6bcca57dfa9860043a4229363e902849, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
