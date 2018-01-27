@@ -14,6 +14,9 @@ public class AutoMove : MonoBehaviour
     bool grounded = true;
     bool ducking;
 
+    [HideInInspector]
+    public bool isDead = false;
+
     BoxCollider col;
     Rigidbody rb;
 
@@ -35,9 +38,18 @@ public class AutoMove : MonoBehaviour
 	}
 	
 	void Update ()
-    { 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-	}
+    {
+        if (!isDead)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                rb.AddForce(Vector3.up * jumpForce);
+                grounded = false;
+            }
+        }
+    }
 
     private void OnCollisionEnter(Collision col)
     {
@@ -45,6 +57,11 @@ public class AutoMove : MonoBehaviour
         {
             ground = col.gameObject.transform;
             grounded = true;
+        }
+
+        if (col.gameObject.tag == "Wall" || col.gameObject.tag == "Duckable")
+        {
+            Death();
         }
     }
 
@@ -81,5 +98,10 @@ public class AutoMove : MonoBehaviour
         rb.constraints = ~RigidbodyConstraints.FreezePosition;
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         ducking = false;
+    }
+
+    public void Death()
+    {
+        isDead = true;
     }
 }
