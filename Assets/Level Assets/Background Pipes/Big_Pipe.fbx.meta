@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 048c396b673ba4742a2b57c501c4caa6
+timeCreated: 1517037333
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Pipe_Big
+    100004: Pipe_Brace
+    100006: Pipe_Grate
+    100008: Pipe_Medium
+    100010: Pipe_Small
+    100012: Pipe_T
+    100014: Stairs
+    100016: Wheel_Handle
+    400000: //RootNode
+    400002: Pipe_Big
+    400004: Pipe_Brace
+    400006: Pipe_Grate
+    400008: Pipe_Medium
+    400010: Pipe_Small
+    400012: Pipe_T
+    400014: Stairs
+    400016: Wheel_Handle
+    2300000: Pipe_Big
+    2300002: Pipe_Brace
+    2300004: Pipe_Grate
+    2300006: Pipe_Medium
+    2300008: Pipe_Small
+    2300010: Pipe_T
+    2300012: Stairs
+    2300014: Wheel_Handle
+    3300000: Pipe_Big
+    3300002: Pipe_Brace
+    3300004: Pipe_Grate
+    3300006: Pipe_Medium
+    3300008: Pipe_Small
+    3300010: Pipe_T
+    3300012: Stairs
+    3300014: Wheel_Handle
+    4300000: Pipe_T
+    4300002: Stairs
+    4300004: Pipe_Medium
+    4300006: Pipe_Small
+    4300008: Wheel_Handle
+    4300010: Pipe_Grate
+    4300012: Pipe_Brace
+    4300014: Pipe_Big
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Big
+    second: {fileID: 2100000, guid: 574d2edf7dc51474b991bbf01dc0850a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Grate
+    second: {fileID: 2100000, guid: 110b8dbac2184814ab7dda6d44434ef1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Medium
+    second: {fileID: 2100000, guid: 16b7c689f36e2054eb89cdf0d29bd536, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Small
+    second: {fileID: 2100000, guid: 00292950eace41e4c8502f306a9527b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_T
+    second: {fileID: 2100000, guid: 48d4181ff505137488d57f919eb6aa62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs
+    second: {fileID: 2100000, guid: 54d2eb141ede5f049ab1545e16f49dac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tube_Brace
+    second: {fileID: 2100000, guid: c049d5529ab5b214a8baa9a509dc8178, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel_Handle
+    second: {fileID: 2100000, guid: 95ec4afeea0be5346b41d01935bd11fd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,6 +10,7 @@ public class AutoMove : MonoBehaviour
     public float jumpForce = 300;
     public Transform ground;
     public float crouchHeight = 1.75f;
+    public ObjectDestroy despawnPoint;
 
     bool grounded = true;
     bool ducking;

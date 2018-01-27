@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class ObjectDestroy : MonoBehaviour
 {
-    public Transform playerGround;      // Ground the player is running on
     public GameObject player;
-    public GameObject ground;           // Ground gameObject to instantiate
+    public GameObject ground;           // Ground gameObject to instantiate\
+    public float tileSize;
+
+    ObstacleGenerator obstacleGenerator;
 
     private void Start()
     {
         player = GameObject.Find("Man");
-        playerGround = player.GetComponent<AutoMove>().ground;
+        obstacleGenerator = GameObject.Find("GameManager").GetComponent<ObstacleGenerator>();
     }
 
-    private void Update()
-    {
-        playerGround = player.GetComponent<AutoMove>().ground;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,11 +23,10 @@ public class ObjectDestroy : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-
-        if(other.gameObject.tag == "Ground")
+        
+        if(other.gameObject.tag == "Player")
         {
-            Instantiate(ground, playerGround.position + new Vector3(30, 0, 0), playerGround.rotation);
-            Destroy(other.gameObject);
+            obstacleGenerator.GenerateGround(transform.parent.gameObject);
         }
     }
 }
