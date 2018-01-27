@@ -9,7 +9,7 @@ public class ObstacleGenerator : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] wallObjects;
     public GameObject[] duckObjects;
-    public GameObject ground;
+    public GameObject[] groundTiles;
     public float tileSize = 68f;
     public List<GameObject> previousGrounds;
 
@@ -46,7 +46,8 @@ public class ObstacleGenerator : MonoBehaviour
     public void GenerateGround(GameObject other)
     {
         previousGrounds.Add(other);
-        Instantiate(ground, other.transform.position + new Vector3(tileSize, 0, 0), Quaternion.identity);
+        int groundObjIndex = Random.Range(0, groundTiles.Length);
+        Instantiate(groundTiles[groundObjIndex], other.transform.position + new Vector3(tileSize, 0, 0), Quaternion.identity);
 
         if(previousGrounds.Count >= 3 && previousGrounds[0] != null)
         {
