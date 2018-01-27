@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23463046143660544}
   m_Layer: 0
   m_Name: WallObj
-  m_TagString: Duckable
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
