@@ -19,8 +19,15 @@ public class ObjectDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Wall" || other.gameObject.tag == "Duckable")
+        if (other.gameObject.tag == "Wall")
         {
+            ObstacleGenerator.currWall--;
+            Destroy(other.gameObject);
+        }
+
+        else if(other.gameObject.tag == "Duckable")
+        {
+            ObstacleGenerator.currDuck--;
             Destroy(other.gameObject);
         }
         

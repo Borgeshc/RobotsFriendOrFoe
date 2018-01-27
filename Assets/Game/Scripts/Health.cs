@@ -39,14 +39,15 @@ public class Health : MonoBehaviour
 
     void Died()
     {
-        Spawner.maxSpawn--;
         switch (enemyType)
         {
             case EnemyType.JumpEnemy:
+                Spawner.numberOfJumps--;
                 man.Jump();
                 break;
 
             case EnemyType.DuckEnemy:
+                Spawner.numberOfDucks--;
                 man.Duck();
                 break;
         }

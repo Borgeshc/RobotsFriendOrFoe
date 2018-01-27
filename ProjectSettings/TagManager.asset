@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Despawn
   - Duckable
+  - ImpWall
   layers:
   - Default
   - TransparentFX

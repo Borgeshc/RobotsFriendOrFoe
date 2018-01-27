@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23787872919783010}
   - component: {fileID: 114040125386052812}
   - component: {fileID: 54307391745963976}
+  - component: {fileID: 114405540104556814}
   m_Layer: 8
   m_Name: DuckEnemy
   m_TagString: Enemy
@@ -353,7 +354,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146167959924698}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -371,3 +372,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   maxHealth: 100
+--- !u!114 &114405540104556814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146167959924698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805b548bb8c227147a5bfb4f3a28e0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 0}
+  randomDirection: {x: 0, y: 0, z: 0}
+  minVelocity: 0

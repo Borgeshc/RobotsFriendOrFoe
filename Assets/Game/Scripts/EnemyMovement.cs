@@ -13,17 +13,16 @@ public class EnemyMovement : MonoBehaviour {
 	void Start () {
         mTarget = GameObject.Find("Player").transform;
         minVelocity = .1f;
-        movementDecider = Random.Range(0, 3);
         randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
         transform.rotation = Quaternion.Euler(randomDirection);
-
+        movementDecider = Random.Range(0, 3);
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { 
         if (movementDecider == 1)
         {
-            transform.position += (mTarget.position - transform.position).normalized * speed;
+            transform.position += (mTarget.position - transform.position).normalized * (minVelocity*.5f);
         }
         else if (movementDecider == 0)
         {
@@ -35,7 +34,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (movementDecider == 0)
         {
-            if (other.transform.tag.Equals("Wall"))
+            if (other.transform.tag.Equals("ImpWall"))
             {
                 speed = randomDirection.magnitude;
                 randomDirection = Vector3.Reflect(randomDirection.normalized, other.contacts[0].normal) * Mathf.Max(speed, minVelocity);
