@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 412858550}
   - component: {fileID: 412858549}
   - component: {fileID: 412858548}
+  - component: {fileID: 412858552}
   m_Layer: 0
   m_Name: WalkingCamera
   m_TagString: MainCamera
@@ -349,6 +350,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!114 &412858552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412858547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c1bfb959209f4f244856f51882fea5f8, type: 2}
 --- !u!1 &685661822
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +947,7 @@ GameObject:
   - component: {fileID: 1362960564}
   - component: {fileID: 1362960563}
   - component: {fileID: 1362960567}
+  - component: {fileID: 1362960568}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1042,6 +1056,18 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &1362960568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362960562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: f1ec251adf0d5734780d2f9d50578780, type: 2}
 --- !u!1 &1633595475 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1624333910151584, guid: fc10888da3a06344d842a3acc3849224,
