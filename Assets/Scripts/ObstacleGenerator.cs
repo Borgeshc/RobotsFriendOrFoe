@@ -8,6 +8,7 @@ public class ObstacleGenerator : MonoBehaviour
     public float spawnTime = 0;
     public Transform[] spawnPoints;
     public GameObject wallObj;
+    public GameObject duckObj;
 
     private void Update()
     {
@@ -17,15 +18,18 @@ public class ObstacleGenerator : MonoBehaviour
         {
             GenerateObj();
             spawnTime = 0;
-        }
-        
+        }    
     }
 
     void GenerateObj()
     {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
-        Instantiate(wallObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        if(spawnPointIndex == 0)
+            Instantiate(wallObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
+        if (spawnPointIndex == 1)
+            Instantiate(duckObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 
         spawnTriggerTime = Random.Range(2, 6);
     }

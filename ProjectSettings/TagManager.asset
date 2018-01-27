@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Wall
   - Despawn
+  - Duckable
   layers:
   - Default
   - TransparentFX
