@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
+    public float spawnTriggerTime = 4;
     public float spawnTime = 0;
     public Transform[] spawnPoints;
     public static int currWall = 0;
     public static int currDuck= 0;
     public GameObject[] wallObjects;
     public GameObject[] duckObjects;
+    public GameObject[] groundTiles;
     public float tileSize = 68f;
     public Spawner spawner;
     public List<GameObject> previousGrounds;
