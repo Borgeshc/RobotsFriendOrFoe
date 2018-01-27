@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public enum EnemyType
+    {
+        JumpEnemy,
+        DuckEnemy
+    };
+
+    public EnemyType enemyType;
+
     public int maxHealth;
 
     int health;
     bool isDead;
 
+    AutoMove man;
+
     void Start()
     {
         health = maxHealth;
+        man = GameObject.Find("Man").GetComponent<AutoMove>();
     }
 
     public void TookDamage(int damage)
@@ -29,5 +40,16 @@ public class Health : MonoBehaviour
     void Died()
     {
         Destroy(gameObject);
+
+        switch(enemyType)
+        {
+            case EnemyType.JumpEnemy:
+                man.Jump();
+                break;
+
+            case EnemyType.DuckEnemy:
+                man.Duck();
+                break;
+        }
     }
 }

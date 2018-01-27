@@ -21,12 +21,6 @@ public class AutoMove : MonoBehaviour
 	void Update ()
     { 
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-            grounded = false;
-        }
 	}
 
     private void OnCollisionEnter(Collision col)
@@ -36,5 +30,17 @@ public class AutoMove : MonoBehaviour
             ground = col.gameObject.transform;
             grounded = true;
         }
+    }
+
+    public void Jump()
+    {
+        if (!grounded) return;
+        rb.AddForce(Vector3.up * jumpForce);
+        grounded = false;
+    }
+
+    public void Duck()
+    {
+        print("Duck");
     }
 }
