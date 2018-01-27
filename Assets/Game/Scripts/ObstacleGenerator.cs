@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-    public float spawnTriggerTime = 2;
     public float spawnTime = 0;
     public Transform[] spawnPoints;
     public static int currWall = 0;
     public static int currDuck= 0;
-    public GameObject wallObj;
-    public GameObject duckObj;
-    public GameObject ground;
+    public GameObject[] wallObjects;
+    public GameObject[] duckObjects;
     public float tileSize = 68f;
     public Spawner spawner;
     public List<GameObject> previousGrounds;
@@ -36,7 +34,8 @@ public class ObstacleGenerator : MonoBehaviour
             currWall++;
             spawner.makeEnemy(0);
             Spawner.numberOfJumps++;
-            Instantiate(wallObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            int wallObjectIndex = Random.Range(0, wallObjects.Length);
+            Instantiate(wallObjects[wallObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         }
 
         if (spawnPointIndex == 1)
@@ -44,16 +43,19 @@ public class ObstacleGenerator : MonoBehaviour
             currDuck++;
             spawner.makeEnemy(1);
             Spawner.numberOfDucks++;
-            Instantiate(duckObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            int duckObjectIndex = Random.Range(0, duckObjects.Length);
+            Instantiate(duckObjects[duckObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
         }
 
-        spawnTriggerTime = Random.Range(2, 6);
+        spawnTriggerTime = Random.Range(4, 8);
     }
 
     public void GenerateGround(GameObject other)
     {
         previousGrounds.Add(other);
-        Instantiate(ground, other.transform.position + new Vector3(tileSize, 0, 0), Quaternion.identity);
+        int groundObjIndex = Random.Range(0, groundTiles.Length);
+        Instantiate(groundTiles[groundObjIndex], other.transform.position + new Vector3(tileSize, 0, 0), Quaternion.identity);
 
         if(previousGrounds.Count >= 3 && previousGrounds[0] != null)
         {
