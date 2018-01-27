@@ -13,9 +13,9 @@ public class Health : MonoBehaviour
     public EnemyType enemyType;
 
     public int maxHealth;
-
     int health;
     bool isDead;
+
 
     AutoMove man;
 
@@ -39,9 +39,8 @@ public class Health : MonoBehaviour
 
     void Died()
     {
-        Destroy(gameObject);
-
-        switch(enemyType)
+        Spawner.maxSpawn--;
+        switch (enemyType)
         {
             case EnemyType.JumpEnemy:
                 man.Jump();
@@ -51,5 +50,7 @@ public class Health : MonoBehaviour
                 man.Duck();
                 break;
         }
+
+        Destroy(gameObject);
     }
 }
