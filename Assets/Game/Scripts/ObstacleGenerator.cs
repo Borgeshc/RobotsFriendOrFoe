@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-    public float spawnTriggerTime = 2;
+    public float spawnTriggerTime = 4;
     public float spawnTime = 0;
     public Transform[] spawnPoints;
-    public GameObject wallObj;
-    public GameObject duckObj;
+    public GameObject[] wallObjects;
+    public GameObject[] duckObjects;
     public GameObject ground;
     public float tileSize = 68f;
     public List<GameObject> previousGrounds;
@@ -29,12 +29,18 @@ public class ObstacleGenerator : MonoBehaviour
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         if(spawnPointIndex == 0)
-            Instantiate(wallObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        {
+            int wallObjectIndex = Random.Range(0, wallObjects.Length);
+            Instantiate(wallObjects[wallObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        }
 
         if (spawnPointIndex == 1)
-            Instantiate(duckObj, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        {
+            int duckObjectIndex = Random.Range(0, duckObjects.Length);
+            Instantiate(duckObjects[duckObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        }
 
-        spawnTriggerTime = Random.Range(2, 6);
+        spawnTriggerTime = Random.Range(4, 8);
     }
 
     public void GenerateGround(GameObject other)

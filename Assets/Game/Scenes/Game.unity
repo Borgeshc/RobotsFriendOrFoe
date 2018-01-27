@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21bb2fc56942b641a64bc9fb9a1f96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!124 &412858549
 Behaviour:
   m_ObjectHideFlags: 0
@@ -973,6 +973,23 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!1 &1633595475 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1624333910151584, guid: fc10888da3a06344d842a3acc3849224,
+    type: 2}
+  m_PrefabInternal: {fileID: 1725927242}
+--- !u!65 &1633595477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633595475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1725927242
 Prefab:
   m_ObjectHideFlags: 0
@@ -980,6 +997,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 412858551}
     m_Modifications:
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: duckObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: wallObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
         type: 2}
       propertyPath: previousGrounds.Array.size
@@ -1032,6 +1059,26 @@ Prefab:
       propertyPath: previousGrounds.Array.data[0]
       value: 
       objectReference: {fileID: 1190523688}
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: wallObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850489223067770, guid: b6d43961523925241bc41fe38e0d6446,
+        type: 2}
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: duckObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850489223067770, guid: 6cf446bb7a940b34488a1be46b8b535f,
+        type: 2}
+    - target: {fileID: 4470536444529034, guid: fc10888da3a06344d842a3acc3849224, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470536444529034, guid: fc10888da3a06344d842a3acc3849224, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc10888da3a06344d842a3acc3849224, type: 2}
   m_IsPrefabParent: 0
@@ -1220,7 +1267,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &1990668841
 MonoBehaviour:
@@ -1234,7 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6faa67d7fc72b42bbae90cd76feb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   jumpForce: 400
   ground: {fileID: 0}
   crouchHeight: 1.75
