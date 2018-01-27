@@ -44,11 +44,6 @@ public class AutoMove : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-            if (Input.GetKeyDown(KeyCode.Space) && grounded)
-            {
-                rb.AddForce(Vector3.up * jumpForce);
-                grounded = false;
-            }
         }
     }
 
@@ -57,6 +52,7 @@ public class AutoMove : MonoBehaviour
         if(col.gameObject.tag == "Ground")
         {
             ground = col.gameObject.transform;
+            anim.SetBool("Jump", false);
             grounded = true;
         }
 
@@ -68,9 +64,9 @@ public class AutoMove : MonoBehaviour
 
     public void Jump()
     {
-        if (!grounded) return;
+        if (!grounded || ducking) return;
 
-        anim.SetTrigger("Jump");
+        anim.SetBool("Jump", true);
 
         rb.AddForce(Vector3.up * jumpForce);
         grounded = false;
@@ -78,7 +74,7 @@ public class AutoMove : MonoBehaviour
 
     public void Duck()
     {
-        if (ducking) return;
+        if (ducking || !grounded) return;
 
         anim.SetTrigger("Duck");
 

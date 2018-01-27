@@ -16,8 +16,9 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        if(walker.GetComponent<AutoMove>().isDead)
+        if(walker.GetComponent<AutoMove>().isDead || shooter.GetComponent<Movement>().isDead)
         {
+
             GameOver();
         }
     }

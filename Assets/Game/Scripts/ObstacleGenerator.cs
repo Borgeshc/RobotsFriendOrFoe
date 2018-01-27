@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-    public float spawnTriggerTime = 4;
-    public float spawnTime = 0;
+    public float spawnTriggerTime;
+    public float timerDecrement;
+    public float spawnTime;
     public Transform[] spawnPoints;
     public static int currWall = 0;
     public static int currDuck= 0;
@@ -16,9 +17,20 @@ public class ObstacleGenerator : MonoBehaviour
     public Spawner spawner;
     public List<GameObject> previousGrounds;
 
+    private int spawnTriggerMax = 30;
+
     private void Update()
     {
+        Debug.Log(timerDecrement);
+
         spawnTime += Time.deltaTime;
+        timerDecrement += Time.deltaTime;
+
+        if(spawnTriggerMax >= 8 && timerDecrement >= 30)
+        {
+            spawnTriggerMax--;
+            timerDecrement = 0;
+        }
 
         if(spawnTime >= spawnTriggerTime)
         {
@@ -34,7 +46,7 @@ public class ObstacleGenerator : MonoBehaviour
         if (spawnPointIndex == 0)
         {
             currWall++;
-            spawner.makeEnemy(0);
+            spawner.makeEnemy(1);
             Spawner.numberOfJumps++;
             int wallObjectIndex = Random.Range(0, wallObjects.Length);
             Instantiate(wallObjects[wallObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
@@ -43,14 +55,14 @@ public class ObstacleGenerator : MonoBehaviour
         if (spawnPointIndex == 1)
         {
             currDuck++;
-            spawner.makeEnemy(1);
+            spawner.makeEnemy(0);
             Spawner.numberOfDucks++;
             int duckObjectIndex = Random.Range(0, duckObjects.Length);
             Instantiate(duckObjects[duckObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 
         }
 
-        spawnTriggerTime = Random.Range(4, 8);
+        spawnTriggerTime = Random.Range(4, spawnTriggerMax);
     }
 
     public void GenerateGround(GameObject other)
