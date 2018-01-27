@@ -20,8 +20,6 @@ public class AutoMove : MonoBehaviour
 	
 	void Update ()
     {
-        Debug.Log(Vector3.Distance(transform.position, ground.position));
-
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         if(Input.GetKeyDown(KeyCode.Space) && grounded)
