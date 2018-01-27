@@ -5,7 +5,6 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int maxHealth;
-
     int health;
     bool isDead;
 
@@ -28,6 +27,7 @@ public class Health : MonoBehaviour
 
     void Died()
     {
+        Spawner.maxSpawn--;
         Destroy(gameObject);
     }
 }

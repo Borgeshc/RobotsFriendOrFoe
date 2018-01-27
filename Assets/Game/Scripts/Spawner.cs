@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour {
     public GameObject[] spawnPoints;
 
     public float timeRespawn;
+    public static int maxSpawn;
 
     private bool isSpawning;
     private int enemyChooser;
@@ -16,6 +17,7 @@ public class Spawner : MonoBehaviour {
 	void Start () {
         enemyChooser = 0;
         spawnPointChooser = 1;
+        maxSpawn = 0;
 	}
 	
 	// Update is called once per frame
@@ -30,10 +32,15 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator spawn()
     {
-        enemyChooser = Random.Range(0, enemyObject.Length);
-        spawnPointChooser = Random.Range(0, spawnPoints.Length);
-        Instantiate(enemyObject[enemyChooser],spawnPoints[spawnPointChooser].transform.position,Quaternion.identity);
+        if (maxSpawn < 12)
+        {
+            enemyChooser = Random.Range(0, enemyObject.Length);
+            spawnPointChooser = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemyObject[enemyChooser], spawnPoints[spawnPointChooser].transform.position, Quaternion.identity);
+            maxSpawn++;
+        }
         yield return new WaitForSeconds(timeRespawn);
         isSpawning = false;
+
     }
 }
