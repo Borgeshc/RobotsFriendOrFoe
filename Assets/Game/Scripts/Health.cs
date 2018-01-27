@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
 
     void Died()
     {
+        if (!man) return;
         switch (enemyType)
         {
             case EnemyType.JumpEnemy:

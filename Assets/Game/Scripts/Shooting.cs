@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public LayerMask groundLayer;
     public LayerMask targetLayer;
     public Camera mainCamera;
     public float rotationSpeed = 100f;
@@ -21,24 +22,36 @@ public class Shooting : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, targetLayer))
+        if(Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundLayer))
         {
-            LookAt(hit.point);
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, hit.point);
-
-            if (Input.GetKeyDown(fireKey))
-            {
-                lineRenderer.enabled = true;
-
-                if(hit.transform.tag.Equals("Enemy"))
-                {
-                    hit.transform.GetComponent<Health>().TookDamage(damage);
-                }
-            }
-            else if (Input.GetKeyUp(fireKey))
-                lineRenderer.enabled = false;
+            //transform.LookAt(hit.point);
+            Vector3 lookPos = hit.point - transform.position;
+            lookPos.y = 0;
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
+
+        if (Input.GetKeyDown(fireKey))
+        {
+            RaycastHit hitAttack;
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, transform.position);
+            if (Physics.Raycast(transform.position, transform.forward, out hitAttack, Mathf.Infinity))
+            {
+                if (hitAttack.transform.tag.Equals("Enemy"))
+                {
+                    hitAttack.transform.GetComponent<Health>().TookDamage(damage);
+
+                    lineRenderer.SetPosition(1, hitAttack.point);
+
+                }
+                else
+                    lineRenderer.SetPosition(1, transform.forward * 1000);
+            }
+        }
+        else if (Input.GetKeyUp(fireKey))
+            lineRenderer.enabled = false;
+           
     }
 
     void LookAt(Vector3 hitPoint)

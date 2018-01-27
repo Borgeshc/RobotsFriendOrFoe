@@ -44,7 +44,7 @@ public class Spawner : MonoBehaviour {
         numberOfJumps = number;
     }
 
-    public void makeEnemy(GameObject enemy)
+    private void makeEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
     }
