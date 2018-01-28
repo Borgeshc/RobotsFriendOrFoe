@@ -11,13 +11,17 @@ public class Shooting : MonoBehaviour
     public KeyCode fireKey;
     public int damage;
 
+    public AudioClip[] shootingSounds;
+    public AudioSource shootingSource;
+    public int randomChooser;
+
     public ArcReactor_Launcher lightningEffect;
 
    // LineRenderer lineRenderer;
 
     private void Start()
     {
-      //  lineRenderer = GetComponent<LineRenderer>();
+        //  lineRenderer = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -38,6 +42,7 @@ public class Shooting : MonoBehaviour
             // lightningEffect.enabled = true;
             // lineRenderer.SetPosition(0, transform.position);
             lightningEffect.LaunchRay();
+            playShootingSound();
             if (Physics.Raycast(transform.position, transform.forward, out hitAttack, Mathf.Infinity))
             {
                 if (hitAttack.transform.tag.Equals("Enemy"))
@@ -68,5 +73,12 @@ public class Shooting : MonoBehaviour
         Vector3 direction = (hitPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+    }
+
+    public void playShootingSound()
+    {
+        randomChooser = Random.Range(0, shootingSounds.Length);
+        shootingSource.clip = shootingSounds[randomChooser];
+        shootingSource.Play();
     }
 }
