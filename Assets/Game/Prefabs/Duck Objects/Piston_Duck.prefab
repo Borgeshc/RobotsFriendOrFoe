@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4536495067127672}
   - component: {fileID: 33539804031483768}
   - component: {fileID: 23881702316428816}
+  - component: {fileID: 65021573895286372}
   m_Layer: 0
   m_Name: Piston
   m_TagString: Untagged
@@ -55,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4859731718329036}
   - component: {fileID: 95424322168403670}
-  - component: {fileID: 65900064566590294}
   m_Layer: 0
   m_Name: PistonCrusher
   m_TagString: Duckable
@@ -273,18 +273,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65900064566590294
+--- !u!65 &65021573895286372
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317119630350184}
+  m_GameObject: {fileID: 1150328243660608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0037381875, y: 0.0043203207, z: 0.0039017887}
-  m_Center: {x: 0.0006173758, y: 0.000012181335, z: -0.013855735}
+  m_Size: {x: 0.0044611613, y: 0.0043481323, z: 0.015136287}
+  m_Center: {x: -0.0000000017788004, y: -7.437214e-19, z: 0.00036543602}
 --- !u!95 &95424322168403670
 Animator:
   serializedVersion: 3

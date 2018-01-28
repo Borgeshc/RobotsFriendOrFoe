@@ -96,6 +96,7 @@ public class AutoMove : MonoBehaviour
         speed = baseSpeed;
         anim.SetBool("Slide", false);
         sliding = false;
+        FlipColliders();
     }
 
     public void FlipColliders()

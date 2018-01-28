@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624333910151584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: -0.9, z: 0}
+  m_LocalPosition: {x: 29.7, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 4710246669757624}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684969535243116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: -3.5, z: -2.6}
+  m_LocalPosition: {x: 29.7, y: -3.5, z: -2.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4710246669757624}
@@ -304,7 +304,6 @@ MonoBehaviour:
   duckObjects:
   - {fileID: 1212820776114592, guid: 1723bef6e67687e4ea153b3ae81a16ea, type: 2}
   - {fileID: 1208566560051198, guid: d59d9b01655966d48b9f8fffd44f8b02, type: 2}
-  - {fileID: 0}
   groundTiles:
   - {fileID: 1307412882714592, guid: 140a5183f57967f4eb686222393dba56, type: 2}
   - {fileID: 1603682100005196, guid: 8e4578c5ef714c24c8994f5233ad9e2b, type: 2}
@@ -312,7 +311,7 @@ MonoBehaviour:
   spawner: {fileID: 0}
   previousGrounds:
   - {fileID: 0}
-  spawnTriggerMax: 15
+  spawnTriggerMax: 11
 --- !u!114 &114401383870307150
 MonoBehaviour:
   m_ObjectHideFlags: 1
