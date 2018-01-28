@@ -322,6 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walker: {fileID: 0}
   shooter: {fileID: 0}
+  deathSoundClip: {fileID: 8300000, guid: 8292be9868e447a48970529ac11a70b7, type: 3}
+  deathSoundSource: {fileID: 0}
+  pp_Profile: {fileID: 11400000, guid: f1ec251adf0d5734780d2f9d50578780, type: 2}
 --- !u!114 &114558613786154858
 MonoBehaviour:
   m_ObjectHideFlags: 1
