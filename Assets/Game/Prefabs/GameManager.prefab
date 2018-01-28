@@ -304,7 +304,7 @@ MonoBehaviour:
   groundTiles:
   - {fileID: 1307412882714592, guid: 140a5183f57967f4eb686222393dba56, type: 2}
   - {fileID: 1603682100005196, guid: 8e4578c5ef714c24c8994f5233ad9e2b, type: 2}
-  tileSize: 68
+  tileSize: 68.6
   spawner: {fileID: 0}
   previousGrounds:
   - {fileID: 0}
