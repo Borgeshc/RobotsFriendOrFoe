@@ -293,20 +293,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTriggerTime: 2
   timerDecrement: 0
-  spawnTime: 5
+  spawnTime: 0
   spawnPoints:
   - {fileID: 4585377496370778}
   - {fileID: 4470536444529034}
   wallObjects:
   - {fileID: 1850489223067770, guid: b6d43961523925241bc41fe38e0d6446, type: 2}
-  duckObjects:
-  - {fileID: 1142193924344280, guid: edc5951eba71f914d9500c0bf58bd194, type: 2}
+  duckObjects: []
   groundTiles:
   - {fileID: 1307412882714592, guid: 140a5183f57967f4eb686222393dba56, type: 2}
+  - {fileID: 1603682100005196, guid: 8e4578c5ef714c24c8994f5233ad9e2b, type: 2}
   tileSize: 68
   spawner: {fileID: 0}
   previousGrounds:
   - {fileID: 0}
+  spawnTriggerMax: 15
 --- !u!114 &114401383870307150
 MonoBehaviour:
   m_ObjectHideFlags: 1
