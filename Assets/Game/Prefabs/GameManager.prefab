@@ -291,16 +291,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c142f20a7825c224da13558bf7eadb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTriggerTime: 2
+  spawnTriggerTime: 4
   timerDecrement: 0
   spawnTime: 0
   spawnPoints:
   - {fileID: 4585377496370778}
   - {fileID: 4470536444529034}
   wallObjects:
-  - {fileID: 1850489223067770, guid: b6d43961523925241bc41fe38e0d6446, type: 2}
+  - {fileID: 1026105923283590, guid: a41b1593239cd8e4a9a0379a67167b70, type: 2}
+  - {fileID: 1298030219013342, guid: 3037ad3e01c4459448aacdead9f6aba5, type: 2}
+  - {fileID: 1670161512587148, guid: 23b47481febffcc47991791fb868d58c, type: 2}
   duckObjects:
-  - {fileID: 1850489223067770, guid: 6cf446bb7a940b34488a1be46b8b535f, type: 2}
+  - {fileID: 1212820776114592, guid: 1723bef6e67687e4ea153b3ae81a16ea, type: 2}
+  - {fileID: 1208566560051198, guid: d59d9b01655966d48b9f8fffd44f8b02, type: 2}
+  - {fileID: 0}
   groundTiles:
   - {fileID: 1307412882714592, guid: 140a5183f57967f4eb686222393dba56, type: 2}
   - {fileID: 1603682100005196, guid: 8e4578c5ef714c24c8994f5233ad9e2b, type: 2}
