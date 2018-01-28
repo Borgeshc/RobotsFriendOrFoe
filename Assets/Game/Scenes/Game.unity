@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2464749, g: 0.2823448, b: 0.34570262, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21bb2fc56942b641a64bc9fb9a1f96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 8, z: -40}
   speed: 5
 --- !u!124 &412858549
 Behaviour:
@@ -566,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 412858547}
   m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: -5, z: -39.8}
+  m_LocalPosition: {x: 0, y: -5, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1725927243}
@@ -1221,7 +1222,8 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8be5064f51795454396b068c1ec2edc2, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 30cdf08331e195e4fa68245148f8029e, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 30cdf08331e195e4fa68245148f8029e, type: 3}
   m_IsPrefabParent: 0
 --- !u!4 &1090392107 stripped
@@ -2399,6 +2401,8 @@ GameObject:
   - component: {fileID: 1990668842}
   - component: {fileID: 1990668841}
   - component: {fileID: 1990668840}
+  - component: {fileID: 1990668845}
+  - component: {fileID: 1990668846}
   m_Layer: 0
   m_Name: Man
   m_TagString: Player
@@ -2413,8 +2417,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1990668838}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13, y: -13.001, z: -0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -12.4, y: -13.001, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1090392107}
@@ -2449,11 +2453,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6faa67d7fc72b42bbae90cd76feb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  baseSpeed: 5
   jumpForce: 400
   ground: {fileID: 0}
   crouchHeight: 1.75
   despawnPoint: {fileID: 562979026}
+  slideTime: 1
+  slideMultiplier: 2
+  fullCollider: {fileID: 1990668843}
+  halfCollider: {fileID: 1990668846}
+  sliding: 0
   isDead: 0
 --- !u!23 &1990668842
 MeshRenderer:
@@ -2501,8 +2510,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.9963617, z: 1}
-  m_Center: {x: 0, y: 0.49818087, z: 0}
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!33 &1990668844
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2511,6 +2520,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1990668838}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1990668845
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990668838}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 30cdf08331e195e4fa68245148f8029e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8be5064f51795454396b068c1ec2edc2, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!65 &1990668846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990668838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2078048914
 GameObject:
   m_ObjectHideFlags: 0

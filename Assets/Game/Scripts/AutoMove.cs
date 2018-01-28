@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class AutoMove : MonoBehaviour
 {
-    public float speed = 3;
+    public float baseSpeed = 3;
     public float jumpForce = 300;
     public Transform ground;
     public float crouchHeight = 1.75f;
     public ObjectDestroy despawnPoint;
+    public float slideTime = 1f;
+    public float slideMultiplier = 2f;
+
+    public BoxCollider fullCollider;
+    public BoxCollider halfCollider;
 
     bool grounded = true;
-    bool ducking;
+    [HideInInspector]
+    public bool sliding;
 
     [HideInInspector]
     public bool isDead = false;
@@ -24,6 +30,7 @@ public class AutoMove : MonoBehaviour
     Animator anim;
 
     float yPosition;
+    float speed;
 
 	void Start ()
     {
@@ -32,13 +39,15 @@ public class AutoMove : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         
         yPosition = transform.position.y;
+        speed = baseSpeed;
 	}
 	
 	void Update ()
     {
         if (!isDead)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z, 0, 0));
         }
     }
 
@@ -59,7 +68,7 @@ public class AutoMove : MonoBehaviour
 
     public void Jump()
     {
-        if (!grounded || ducking) return;
+        if (!grounded || sliding) return;
 
         anim.SetBool("Jump", true);
 
@@ -67,30 +76,31 @@ public class AutoMove : MonoBehaviour
         grounded = false;
     }
 
-    public void Duck()
+    public void Slide()
     {
-        if (ducking || !grounded) return;
+        if (sliding || !grounded) return;
 
-        anim.SetTrigger("Duck");
+        anim.SetBool("Slide", true);
+        sliding = true;
 
-        ducking = true;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        col.size -= new Vector3(col.size.x, crouchHeight, col.size.z);
-        col.center -= new Vector3(col.center.x, crouchHeight / 2, col.center.z);
-        StartCoroutine(Ducking());
+        FlipColliders();
+        StartCoroutine(Sliding());
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
-    IEnumerator Ducking()
+    IEnumerator Sliding()
     {
-        yield return new WaitForSeconds(1);
+        speed *= slideMultiplier;
+        yield return new WaitForSecondsRealtime(slideTime);
+        speed = baseSpeed;
+        anim.SetBool("Slide", false);
+        sliding = false;
+    }
 
-        col.size += new Vector3(1, crouchHeight, 1);
-        col.center += new Vector3(0, crouchHeight / 2, 0);
-
-        rb.constraints = ~RigidbodyConstraints.FreezePositionX;
-        rb.constraints = ~RigidbodyConstraints.FreezePositionY;
-        transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
-        ducking = false;
+    public void FlipColliders()
+    {
+        fullCollider.enabled = !fullCollider.enabled;
+        halfCollider.enabled = !halfCollider.enabled;
     }
 
     public void Death()

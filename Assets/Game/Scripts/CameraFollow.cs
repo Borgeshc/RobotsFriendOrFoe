@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour 
 {
-    public float speed = 3;
+    public Vector3 offset;
+    public float speed = 15f;
+
+    GameObject player;
+    Vector3 velocity;
+
+    private void Start()
+    {
+        player = GameObject.Find("Man");
+    }
 
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * speed);
+        transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + offset, ref velocity, speed * Time.deltaTime);
     }
 }
