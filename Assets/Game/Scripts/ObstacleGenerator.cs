@@ -16,7 +16,7 @@ public class ObstacleGenerator : MonoBehaviour
     public float tileSize = 68f;
     public Spawner spawner;
     public List<GameObject> previousGrounds;
-    private int spawnTriggerMax = 30;
+    public int spawnTriggerMax = 30;
 
     private void Update()
     {

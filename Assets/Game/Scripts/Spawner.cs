@@ -7,6 +7,8 @@ public class Spawner : MonoBehaviour {
     public GameObject[] enemyObject;
     public GameObject[] spawnPoints;
 
+    public GameObject[] spawnEffects;
+
     public float timeRespawn;
     public static int numberOfJumps;
     public static int numberOfDucks;
@@ -51,6 +53,7 @@ public class Spawner : MonoBehaviour {
         spawnPointChooser = Random.Range(0, spawnPoints.Length);
         offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
         Instantiate(enemyObject[number], spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
+        spawnEffects[spawnPointChooser].SetActive(true);
     }
     IEnumerator spawn()
     {
