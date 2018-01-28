@@ -5,16 +5,16 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
     public Transform mTarget;
     private float speed;
-    public Vector3 randomDirection;
-    private int movementDecider;
-    public float minVelocity;
+    public Vector3 direction;
+    public int movementDecider;
+    public float randomVelocity;
 
 	// Use this for initialization
 	void Start () {
         mTarget = GameObject.Find("Player").transform;
-        minVelocity = .1f;
+        randomVelocity = Random.Range(.1f,.15f);
      
-        randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+        direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
       //  transform.rotation = Quaternion.Euler(randomDirection);
         movementDecider = Random.Range(0, 3);
 
@@ -24,11 +24,11 @@ public class EnemyMovement : MonoBehaviour {
 	void Update () {
         if (movementDecider == 1)
         {
-            transform.position += (mTarget.position - transform.position).normalized * speed;
+            transform.position += (mTarget.position - transform.position).normalized * .06f;
         }
         else if (movementDecider == 0)
         {
-            transform.position += randomDirection * minVelocity;
+            transform.position += direction * randomVelocity;
         }
 	}
 
@@ -38,8 +38,8 @@ public class EnemyMovement : MonoBehaviour {
         {
             if (other.transform.tag.Equals("ImpWall"))
             {
-                speed = randomDirection.magnitude;
-                randomDirection = Vector3.Reflect(randomDirection.normalized, other.contacts[0].normal) * Mathf.Max(speed, minVelocity);
+                //speed = randomDirection.magnitude;
+                direction = Vector3.Reflect(direction.normalized, other.contacts[0].normal).normalized;
             }
         }
     }
