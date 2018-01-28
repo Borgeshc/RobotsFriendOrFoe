@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
         movement *= speed * Time.deltaTime * .02f;
         transform.position += movement;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -17, 17), transform.position.y, Mathf.Clamp(transform.position.z, -6, 6));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -27, 27), transform.position.y, Mathf.Clamp(transform.position.z, -7, 7));
     }
 
     private void OnCollisionEnter(Collision col)
