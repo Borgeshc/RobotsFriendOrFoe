@@ -71,7 +71,6 @@ public class AutoMove : MonoBehaviour
         if (!grounded || sliding) return;
 
         anim.SetBool("Jump", true);
-
         rb.AddForce(Vector3.up * jumpForce);
         grounded = false;
     }
