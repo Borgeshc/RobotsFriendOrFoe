@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: d8ebdd3fe5096d84da7b27a359669e44
+timeCreated: 1517079808
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box006
+    100002: Box007
+    100004: Box009
+    100006: Box011
+    100008: Capsule002
+    100010: Capsule003
+    100012: ChamferBox001
+    100014: //RootNode
+    100016: Cylinder029
+    100018: Cylinder030
+    100020: Line001
+    100022: Line002
+    100024: OilTank001
+    400000: Box006
+    400002: Box007
+    400004: Box009
+    400006: Box011
+    400008: Capsule002
+    400010: Capsule003
+    400012: ChamferBox001
+    400014: //RootNode
+    400016: Cylinder029
+    400018: Cylinder030
+    400020: Line001
+    400022: Line002
+    400024: OilTank001
+    2300000: Box006
+    2300002: Box007
+    2300004: Box009
+    2300006: Box011
+    2300008: Capsule002
+    2300010: Capsule003
+    2300012: ChamferBox001
+    2300014: Cylinder029
+    2300016: Cylinder030
+    2300018: Line001
+    2300020: Line002
+    2300022: OilTank001
+    3300000: Box006
+    3300002: Box007
+    3300004: Box009
+    3300006: Box011
+    3300008: Capsule002
+    3300010: Capsule003
+    3300012: ChamferBox001
+    3300014: Cylinder029
+    3300016: Cylinder030
+    3300018: Line001
+    3300020: Line002
+    3300022: OilTank001
+    4300000: Cylinder029
+    4300002: ChamferBox001
+    4300004: Box011
+    4300006: Capsule003
+    4300008: Line002
+    4300010: Box006
+    4300012: Capsule002
+    4300014: OilTank001
+    4300016: Box007
+    4300018: Line001
+    4300020: Box009
+    4300022: Cylinder030
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 05 - Default
+    second: {fileID: 2100000, guid: 1e8c7b40dbf8be540a45c2b1ab99d5cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chop Blade
+    second: {fileID: 2100000, guid: f84d9ec3ee2983a4b98457d5988521b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chop Top
+    second: {fileID: 2100000, guid: 52b0abdea29d53c4e8de00d01d52152e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compressor Hose
+    second: {fileID: 2100000, guid: e0a1f31213ebf0543b13e3e52042065b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Footer BAse for Chop
+    second: {fileID: 2100000, guid: 7c73c9118a9557a4fb639354879dbef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hydrolic Cyl
+    second: {fileID: 2100000, guid: 44c9ae0010832a2439b4e6058caba3eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hydrolic Cyl Base
+    second: {fileID: 2100000, guid: 1b4718b395eb1f6488663094deb559df, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
