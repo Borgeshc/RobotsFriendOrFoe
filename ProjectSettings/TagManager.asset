@@ -10,6 +10,7 @@ TagManager:
   - Despawn
   - Duckable
   - ImpWall
+  - DecoyPlayer
   layers:
   - Default
   - TransparentFX

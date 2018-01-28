@@ -56,7 +56,9 @@ public class AutoMove : MonoBehaviour
         if(col.gameObject.tag == "Ground")
         {
             ground = col.gameObject.transform;
-            anim.SetBool("Jump", false);
+
+            if(anim)
+                anim.SetBool("Jump", false);
             grounded = true;
         }
 

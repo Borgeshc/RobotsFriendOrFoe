@@ -25,8 +25,8 @@ public class Game : MonoBehaviour
         wallJumps = 0;
         ducks = 0;
         timeSurvived = 0;
-        walker = GameObject.Find("Man");
-        shooter = GameObject.Find("Player");
+        //walker = GameObject.Find("Man");
+        //shooter = GameObject.Find("Player");
         BloomModel.Settings C_bloom = pp_Profile.bloom.settings;
         C_bloom.bloom.intensity = 0f;
         C_bloom.bloom.threshold = 0f;

@@ -6,15 +6,16 @@ public class CameraFollow : MonoBehaviour
 {
     public Vector3 offset;
 
-    GameObject player;
+   public GameObject player;
 
     private void Start()
     {
-        player = GameObject.Find("Man");
+      //  player = GameObject.Find("Man");
     }
 
     void LateUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x + offset.x, offset.y, player.transform.position.z + offset.z);
+        if(player.activeInHierarchy)
+            transform.position = new Vector3(player.transform.position.x + offset.x, offset.y, player.transform.position.z + offset.z);
     }
 }
