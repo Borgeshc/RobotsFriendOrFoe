@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (movementDecider == 0)
         {
-            if (other.transform.tag.Equals("Wall"))
+            if (other.transform.tag.Equals("ImpWall"))
             {
                 speed = randomDirection.magnitude;
                 randomDirection = Vector3.Reflect(randomDirection.normalized, other.contacts[0].normal) * Mathf.Max(speed, minVelocity);

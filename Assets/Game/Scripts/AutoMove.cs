@@ -87,8 +87,8 @@ public class AutoMove : MonoBehaviour
         col.size += new Vector3(1, crouchHeight, 1);
         col.center += new Vector3(0, crouchHeight / 2, 0);
 
-        rb.constraints = ~RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezePositionZ;
+        rb.constraints = ~RigidbodyConstraints.FreezePositionX;
+        rb.constraints = ~RigidbodyConstraints.FreezePositionY;
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         ducking = false;
     }
