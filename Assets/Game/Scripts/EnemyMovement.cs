@@ -40,5 +40,6 @@ public class EnemyMovement : MonoBehaviour {
                 randomDirection = Vector3.Reflect(randomDirection.normalized, other.contacts[0].normal) * Mathf.Max(speed, minVelocity);
             }
         }
+
     }
 }

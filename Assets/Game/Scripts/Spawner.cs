@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour {
     private bool isSpawning;
     private int enemyChooser;
     private int spawnPointChooser;
+    private float initalWait;
 
 	void Start ()
     {
@@ -27,7 +28,8 @@ public class Spawner : MonoBehaviour {
 	
 	void Update ()
     {
-	    if(!isSpawning)
+        initalWait += Time.deltaTime;
+	    if(!isSpawning && initalWait > 10)
         {
             isSpawning = true;
             StartCoroutine(spawn());
@@ -44,28 +46,26 @@ public class Spawner : MonoBehaviour {
         numberOfJumps = number;
     }
 
-    private void makeEnemy(GameObject enemy)
-    {
-        Instantiate(enemy, spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
-    }
     public void makeEnemy(int number)
     {
         spawnPointChooser = Random.Range(0, spawnPoints.Length);
+        offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
         Instantiate(enemyObject[number], spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
     }
     IEnumerator spawn()
     {
         if (numberOfDucks+numberOfJumps < 15)
         {
+            yield return new WaitForSeconds(timeRespawn);
             spawnPointChooser = Random.Range(0, spawnPoints.Length);
             offsetRandom = new Vector3(Random.Range(-1,1), transform.position.y, Random.Range(-1,1));
             if(ObstacleGenerator.currDuck > 0 && numberOfDucks == 0)
             {
-                enemyChooser = 1;
+                enemyChooser = 0;
             }
             else if(ObstacleGenerator.currWall > 0 && numberOfJumps == 0)
             {
-                enemyChooser = 0;
+                enemyChooser = 1;
             }
             else
             {
@@ -80,9 +80,8 @@ public class Spawner : MonoBehaviour {
             {
                 numberOfDucks++;
             }
-            makeEnemy(enemy);
+            Instantiate(enemy, spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
         }
-        yield return new WaitForSeconds(timeRespawn);
         isSpawning = false;
     }
 }
