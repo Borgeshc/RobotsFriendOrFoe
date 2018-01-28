@@ -16,8 +16,10 @@ public class Health : MonoBehaviour
     int health;
     bool isDead;
 
+	public GameObject destroyParticle;
+	public GameObject transferParticle;
 
-    AutoMove man;
+	AutoMove man;
 
     void Start()
     {
@@ -53,6 +55,10 @@ public class Health : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
+		Instantiate(destroyParticle, transform.position+Vector3.up, Quaternion.identity);
+		GameObject transfer = (GameObject)Instantiate(transferParticle, GameObject.Find("Man").transform.position, Quaternion.identity);
+		transfer.transform.SetParent(GameObject.Find("Man").transform);
+
+		Destroy(gameObject);
     }
 }

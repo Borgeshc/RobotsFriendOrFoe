@@ -175,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146167959924698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.727953, y: -0.03, z: 0.25861}
+  m_LocalPosition: {x: 4.6, y: 0.9, z: -1.3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4516241122115996}
@@ -401,6 +401,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   maxHealth: 1
+  destroyParticle: {fileID: 1034251264388772, guid: ed242de10c810cc42a4941b3e2f2984d,
+    type: 2}
+  transferParticle: {fileID: 1001910955047080, guid: ba245436976c915428f55f92a585b113,
+    type: 2}
 --- !u!114 &114955016546511754
 MonoBehaviour:
   m_ObjectHideFlags: 1
