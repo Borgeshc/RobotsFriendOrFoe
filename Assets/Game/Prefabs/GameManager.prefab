@@ -311,7 +311,7 @@ MonoBehaviour:
   spawner: {fileID: 0}
   previousGrounds:
   - {fileID: 0}
-  spawnTriggerMax: 11
+  spawnTriggerMax: 6
 --- !u!114 &114401383870307150
 MonoBehaviour:
   m_ObjectHideFlags: 1
