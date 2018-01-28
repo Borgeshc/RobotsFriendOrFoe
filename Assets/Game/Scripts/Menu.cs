@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-
+    bool clicked;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,7 +23,11 @@ public class Menu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        if(!clicked)
+        {
+            clicked = true;
+            SceneManager.LoadScene("Game");
+        }
     }
 
     public void Settings()

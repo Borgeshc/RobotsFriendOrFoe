@@ -12,6 +12,9 @@ public class Game : MonoBehaviour
     public AudioClip deathSoundClip;
     public AudioSource deathSoundSource;
 
+    public AudioClip deathSoundClip2;
+    public AudioSource deathSoundSource2;
+
     public PostProcessingProfile pp_Profile;
     private BloomModel.Settings C_bloom;
 
@@ -64,6 +67,8 @@ public class Game : MonoBehaviour
     {
         deathSoundSource.clip = deathSoundClip;
         deathSoundSource.Play();
+        deathSoundSource2.clip = deathSoundClip2;
+        deathSoundSource2.Play();
     }
 
     public void GameOver()
