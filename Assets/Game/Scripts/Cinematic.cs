@@ -6,6 +6,7 @@ public class Cinematic : MonoBehaviour
 {
     public GameObject decoy;
     public GameObject man;
+    public Fade fader;
 
     Animator anim;
     Animator manimator;
@@ -19,6 +20,7 @@ public class Cinematic : MonoBehaviour
 	public void ClawInPosition()
     {
         anim.SetBool("Open", true);
+        fader.droppedOff = true;
     }
 
     public void ClawOpen()

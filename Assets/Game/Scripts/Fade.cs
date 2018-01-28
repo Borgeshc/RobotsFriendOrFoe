@@ -6,14 +6,20 @@ using UnityEngine.UI;
 public class Fade : MonoBehaviour
 {
     Image image;
-    
-	void Start ()
+    [HideInInspector]
+    public bool droppedOff;
+
+
+    void Start ()
     {
         image = GetComponent<Image>();
 	}
 	
 	void Update ()
     {
-        image.CrossFadeColor(Color.clear, 2.0f, false, true);
+        if(droppedOff)
+        {
+            image.CrossFadeColor(Color.clear, 15f, false, true);
+        }
     }
 }
