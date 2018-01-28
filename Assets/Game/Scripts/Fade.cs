@@ -8,7 +8,13 @@ public class Fade : MonoBehaviour
     Image image;
     [HideInInspector]
     public bool droppedOff;
+    [HideInInspector]
+    public bool fadeOut;
 
+    public float speed = 15f;
+    public bool hasSpeed;
+    public Fade fade;
+    public GameObject nextPanel;
 
     void Start ()
     {
@@ -17,9 +23,38 @@ public class Fade : MonoBehaviour
 	
 	void Update ()
     {
-        if(droppedOff)
+   
+        if(hasSpeed && droppedOff)
+        {
+            image.CrossFadeColor(Color.clear, speed, false, true);
+        }
+        else if (droppedOff)
         {
             image.CrossFadeColor(Color.clear, 15f, false, true);
         }
+
+
+        if (fadeOut)
+        {
+            image.CrossFadeColor(Color.black, 1f, false, true);
+        }
+    }
+
+    public void SetFade()
+    {
+        droppedOff = true;
+    }
+
+    public void FadeToBlack()
+    {
+        fadeOut = true;
+        StartCoroutine(StartFadeIn());
+    }
+
+    IEnumerator StartFadeIn()
+    {
+        yield return new WaitForSeconds(1);
+        nextPanel.SetActive(true);
+        fade.SetFade() ;
     }
 }
