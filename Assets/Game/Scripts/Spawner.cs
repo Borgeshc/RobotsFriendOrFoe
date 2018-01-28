@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
     public GameObject[] spawnEffects;
 
     public float timeRespawn;
+    public float timeDelay;
     public static int numberOfJumps;
     public static int numberOfDucks;
 
@@ -50,18 +51,18 @@ public class Spawner : MonoBehaviour {
 
     public void makeEnemy(int number)
     {
-        spawnPointChooser = Random.Range(0, spawnPoints.Length);
-        offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
-        Instantiate(enemyObject[number], spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
-        spawnEffects[spawnPointChooser].SetActive(true);
+        StartCoroutine(spawnone(number));
     }
+
     IEnumerator spawn()
     {
         if (numberOfDucks + numberOfJumps < 15)
         {
-            yield return new WaitForSeconds(timeRespawn);
+           yield return new WaitForSeconds(timeRespawn);
             spawnPointChooser = Random.Range(0, spawnPoints.Length);
-            offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
+            spawnEffects[spawnPointChooser].SetActive(true);
+            yield return new WaitForSeconds(timeDelay);
+           // offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
             if (ObstacleGenerator.currDuck > 0 && numberOfDucks == 0)
             {
                 enemyChooser = 0;
@@ -83,7 +84,20 @@ public class Spawner : MonoBehaviour {
             {
                 numberOfDucks++;
             }
-            Instantiate(enemy, spawnPoints[spawnPointChooser].transform.position + offsetRandom, Quaternion.identity);
+            Instantiate(enemy, spawnPoints[spawnPointChooser].transform.position, Quaternion.identity);
+        }
+        isSpawning = false;
+    }
+
+    IEnumerator spawnone(int number)
+    {
+        if (numberOfDucks + numberOfJumps < 15)
+        {
+            spawnPointChooser = Random.Range(0, spawnPoints.Length);
+           // offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
+            spawnEffects[spawnPointChooser].SetActive(true);
+            yield return new WaitForSeconds(timeDelay);
+            Instantiate(enemyObject[number], spawnPoints[spawnPointChooser].transform.position, Quaternion.identity);
         }
         isSpawning = false;
     }
