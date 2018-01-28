@@ -9,30 +9,27 @@ public class ObstacleGenerator : MonoBehaviour
     public float spawnTime;
     public Transform[] spawnPoints;
     public static int currWall = 0;
-    public static int currDuck= 0;
+    public static int currDuck = 0;
     public GameObject[] wallObjects;
     public GameObject[] duckObjects;
     public GameObject[] groundTiles;
     public float tileSize = 68f;
     public Spawner spawner;
     public List<GameObject> previousGrounds;
-
     private int spawnTriggerMax = 30;
 
     private void Update()
     {
-        Debug.Log(timerDecrement);
-
         spawnTime += Time.deltaTime;
         timerDecrement += Time.deltaTime;
 
-        if(spawnTriggerMax >= 8 && timerDecrement >= 30)
+        if (spawnTriggerMax >= 8 && timerDecrement >= 30)
         {
             spawnTriggerMax--;
             timerDecrement = 0;
         }
 
-        if(spawnTime >= spawnTriggerTime)
+        if (spawnTime >= spawnTriggerTime)
         {
             GenerateObj();
             spawnTime = 0;
@@ -43,7 +40,7 @@ public class ObstacleGenerator : MonoBehaviour
     {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
-        if (spawnPointIndex == 0)
+        if(spawnPointIndex == 0)
         {
             currWall++;
             spawner.makeEnemy(1);
@@ -59,7 +56,6 @@ public class ObstacleGenerator : MonoBehaviour
             Spawner.numberOfDucks++;
             int duckObjectIndex = Random.Range(0, duckObjects.Length);
             Instantiate(duckObjects[duckObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-
         }
 
         spawnTriggerTime = Random.Range(4, spawnTriggerMax);

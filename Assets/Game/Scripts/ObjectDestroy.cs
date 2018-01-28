@@ -16,7 +16,6 @@ public class ObjectDestroy : MonoBehaviour
         obstacleGenerator = GameObject.Find("GameManager").GetComponent<ObstacleGenerator>();
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Wall")
@@ -25,13 +24,13 @@ public class ObjectDestroy : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        else if(other.gameObject.tag == "Duckable")
+        else if (other.gameObject.tag == "Duckable")
         {
             ObstacleGenerator.currDuck--;
             Destroy(other.gameObject);
         }
-        
-        if(other.gameObject.tag == "Player")
+
+        if (other.gameObject.tag == "Player")
         {
             obstacleGenerator.GenerateGround(transform.parent.gameObject);
         }

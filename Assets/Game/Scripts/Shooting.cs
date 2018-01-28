@@ -22,9 +22,8 @@ public class Shooting : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundLayer))
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundLayer))
         {
-            //transform.LookAt(hit.point);
             Vector3 lookPos = hit.point - transform.position;
             lookPos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(lookPos);
@@ -51,8 +50,8 @@ public class Shooting : MonoBehaviour
         }
         else if (Input.GetKeyUp(fireKey))
             lineRenderer.enabled = false;
-           
     }
+    
 
     void LookAt(Vector3 hitPoint)
     {

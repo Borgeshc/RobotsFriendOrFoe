@@ -21,8 +21,6 @@ public class AutoMove : MonoBehaviour
     BoxCollider col;
     Rigidbody rb;
 
-    Vector3 originalSize;
-    Vector3 originalCenter;
     Animator anim;
 
     float yPosition;
@@ -32,9 +30,7 @@ public class AutoMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<BoxCollider>();
         anim = GetComponentInChildren<Animator>();
-
-        originalSize = col.size;
-        originalCenter = col.center;
+        
         yPosition = transform.position.y;
 	}
 	
@@ -43,7 +39,6 @@ public class AutoMove : MonoBehaviour
         if (!isDead)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
         }
     }
 
@@ -93,6 +88,7 @@ public class AutoMove : MonoBehaviour
         col.center += new Vector3(0, crouchHeight / 2, 0);
 
         rb.constraints = ~RigidbodyConstraints.FreezePosition;
+        rb.constraints = RigidbodyConstraints.FreezePositionZ;
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         ducking = false;
     }

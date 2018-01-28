@@ -18,23 +18,23 @@ public class Spawner : MonoBehaviour {
     private int spawnPointChooser;
     private float initalWait;
 
-	void Start ()
+    void Start()
     {
         enemyChooser = 0;
         spawnPointChooser = 1;
         numberOfDucks = ObstacleGenerator.currDuck;
         numberOfJumps = ObstacleGenerator.currWall;
     }
-	
-	void Update ()
+
+    void Update()
     {
         initalWait += Time.deltaTime;
-	    if(!isSpawning && initalWait > 10)
+        if (!isSpawning && initalWait > 10)
         {
             isSpawning = true;
             StartCoroutine(spawn());
         }
-	}
+    }
 
     public void SetDucks(int number)
     {
@@ -54,16 +54,16 @@ public class Spawner : MonoBehaviour {
     }
     IEnumerator spawn()
     {
-        if (numberOfDucks+numberOfJumps < 15)
+        if (numberOfDucks + numberOfJumps < 15)
         {
             yield return new WaitForSeconds(timeRespawn);
             spawnPointChooser = Random.Range(0, spawnPoints.Length);
-            offsetRandom = new Vector3(Random.Range(-1,1), transform.position.y, Random.Range(-1,1));
-            if(ObstacleGenerator.currDuck > 0 && numberOfDucks == 0)
+            offsetRandom = new Vector3(Random.Range(-1, 1), transform.position.y, Random.Range(-1, 1));
+            if (ObstacleGenerator.currDuck > 0 && numberOfDucks == 0)
             {
                 enemyChooser = 0;
             }
-            else if(ObstacleGenerator.currWall > 0 && numberOfJumps == 0)
+            else if (ObstacleGenerator.currWall > 0 && numberOfJumps == 0)
             {
                 enemyChooser = 1;
             }
@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour {
                 enemyChooser = Random.Range(0, enemyObject.Length);
             }
             GameObject enemy = enemyObject[enemyChooser];
-            if(enemy.GetComponent<Health>().enemyType == Health.EnemyType.JumpEnemy)
+            if (enemy.GetComponent<Health>().enemyType == Health.EnemyType.JumpEnemy)
             {
                 numberOfJumps++;
             }

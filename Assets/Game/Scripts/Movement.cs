@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     float vertical;
 
     Rigidbody rb;
-
     [HideInInspector]
     public bool isDead;
 
@@ -21,17 +20,15 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
-        {
-            horizotnal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
+        if (isDead) return;
+        horizotnal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
-            Vector3 movement = new Vector3(horizotnal, 0, vertical).normalized;
-            movement *= speed * Time.deltaTime * .02f;
-            transform.position += movement;
+        Vector3 movement = new Vector3(horizotnal, 0, vertical).normalized;
+        movement *= speed * Time.deltaTime * .02f;
+        transform.position += movement;
 
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -17, 17), transform.position.y, Mathf.Clamp(transform.position.z, -6, 6));
-        }
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -17, 17), transform.position.y, Mathf.Clamp(transform.position.z, -6, 6));
     }
 
     private void OnCollisionEnter(Collision col)
@@ -40,7 +37,6 @@ public class Movement : MonoBehaviour
         {
             Death();
         }
-
     }
 
     private void Death()
