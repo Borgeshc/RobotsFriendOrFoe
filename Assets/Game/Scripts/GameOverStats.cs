@@ -18,5 +18,6 @@ public class GameOverStats : MonoBehaviour
         duckedObjects.text = "" + Game.ducks;
         killedObjects.text = "" + totalNumberDead;
         timeSurvived.text = "" + (int) Game.timeSurvived + " Seconds";
+        totalNumberDead = 0;
 	}
 }

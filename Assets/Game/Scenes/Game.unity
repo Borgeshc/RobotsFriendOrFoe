@@ -10079,7 +10079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 8
-  jumpForce: 400
+  jumpForce: 430
   ground: {fileID: 0}
   crouchHeight: 1.75
   despawnPoint: {fileID: 562979026}
