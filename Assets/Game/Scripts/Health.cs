@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
     };
 
     public EnemyType enemyType;
-
     public int maxHealth;
     int health;
     bool isDead;
@@ -59,6 +58,7 @@ public class Health : MonoBehaviour
 		GameObject transfer = (GameObject)Instantiate(transferParticle, GameObject.Find("Man").transform.position, Quaternion.identity);
 		transfer.transform.SetParent(GameObject.Find("Man").transform);
 
+        GameOverStats.totalNumberDead++;
 		Destroy(gameObject);
     }
 }

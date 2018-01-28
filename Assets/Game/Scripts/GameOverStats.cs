@@ -9,13 +9,14 @@ public class GameOverStats : MonoBehaviour
     public Text duckedObjects;
     public Text killedObjects;
     public Text timeSurvived;
+    public static int totalNumberDead ;
 
 	// Use this for initialization
 	void Start ()
     {
         jumpedObjects.text = "" + Game.wallJumps;
         duckedObjects.text = "" + Game.ducks;
-        killedObjects.text = "";
+        killedObjects.text = "" + totalNumberDead;
         timeSurvived.text = "" + (int) Game.timeSurvived + " Seconds";
 	}
 }

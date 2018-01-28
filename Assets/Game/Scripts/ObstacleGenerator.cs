@@ -16,14 +16,14 @@ public class ObstacleGenerator : MonoBehaviour
     public float tileSize = 68f;
     public Spawner spawner;
     public List<GameObject> previousGrounds;
-    public int spawnTriggerMax = 30;
+    public int spawnTriggerMax = 20;
 
     private void Update()
     {
         spawnTime += Time.deltaTime;
         timerDecrement += Time.deltaTime;
 
-        if (spawnTriggerMax >= 8 && timerDecrement >= 30)
+        if (spawnTriggerMax >= 8 && timerDecrement >= 20)
         {
             spawnTriggerMax--;
             timerDecrement = 0;

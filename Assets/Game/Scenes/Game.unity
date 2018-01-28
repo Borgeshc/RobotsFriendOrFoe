@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21bb2fc56942b641a64bc9fb9a1f96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 10, y: 0, z: -51}
+  offset: {x: 15, y: -1, z: -51}
 --- !u!124 &412858549
 Behaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +745,16 @@ Prefab:
       propertyPath: previousGrounds.Array.data[0]
       value: 
       objectReference: {fileID: 1190523688}
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: spawnTriggerTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114100071395331308, guid: fc10888da3a06344d842a3acc3849224,
+        type: 2}
+      propertyPath: timerDecrement
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc10888da3a06344d842a3acc3849224, type: 2}
   m_IsPrefabParent: 0
