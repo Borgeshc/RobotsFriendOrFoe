@@ -546,7 +546,7 @@ MonoBehaviour:
   - {fileID: 1835027205075088}
   - {fileID: 1290878159317786}
   - {fileID: 1776272924764766}
-  timeRespawn: 8
+  timeRespawn: 2
   timeDelay: 3
 --- !u!114 &114258230458666522
 MonoBehaviour:

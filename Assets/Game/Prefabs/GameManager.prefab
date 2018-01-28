@@ -299,7 +299,8 @@ MonoBehaviour:
   - {fileID: 4470536444529034}
   wallObjects:
   - {fileID: 1850489223067770, guid: b6d43961523925241bc41fe38e0d6446, type: 2}
-  duckObjects: []
+  duckObjects:
+  - {fileID: 1850489223067770, guid: 6cf446bb7a940b34488a1be46b8b535f, type: 2}
   groundTiles:
   - {fileID: 1307412882714592, guid: 140a5183f57967f4eb686222393dba56, type: 2}
   - {fileID: 1603682100005196, guid: 8e4578c5ef714c24c8994f5233ad9e2b, type: 2}

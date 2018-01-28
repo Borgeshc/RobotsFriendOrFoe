@@ -43,19 +43,19 @@ public class ObstacleGenerator : MonoBehaviour
         if(spawnPointIndex == 0)
         {
             currWall++;
-            spawner.makeEnemy(1);
             Spawner.numberOfJumps++;
             int wallObjectIndex = Random.Range(0, wallObjects.Length);
             Instantiate(wallObjects[wallObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            spawner.makeEnemy(1);
         }
 
         if (spawnPointIndex == 1)
         {
             currDuck++;
-            spawner.makeEnemy(0);
             Spawner.numberOfDucks++;
             int duckObjectIndex = Random.Range(0, duckObjects.Length);
             Instantiate(duckObjects[duckObjectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            spawner.makeEnemy(0);
         }
 
         spawnTriggerTime = Random.Range(4, spawnTriggerMax);
