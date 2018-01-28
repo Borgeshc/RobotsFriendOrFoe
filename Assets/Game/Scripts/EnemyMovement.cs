@@ -16,8 +16,7 @@ public class EnemyMovement : MonoBehaviour {
      
         direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 
-        // movementDecider = Random.Range(0, 2);
-        movementDecider = 1;
+        movementDecider = Random.Range(0, 2);
 
     }
 	
