@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour {
 	void Start () {
         mTarget = GameObject.Find("Player").transform;
         randomVelocity = Random.Range(.1f,.15f);
-        randomChaseVelocity = Random.Range(.06f, .08f);
+        randomChaseVelocity = Random.Range(.04f, .06f);
      
         direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 
