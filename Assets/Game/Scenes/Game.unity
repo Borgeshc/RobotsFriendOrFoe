@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6faa67d7fc72b42bbae90cd76feb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 3
+  baseSpeed: 8
   jumpForce: 400
   ground: {fileID: 0}
   crouchHeight: 1.75
