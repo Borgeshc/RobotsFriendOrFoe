@@ -15,8 +15,9 @@ public class EnemyMovement : MonoBehaviour {
         randomVelocity = Random.Range(.1f,.15f);
      
         direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
-      //  transform.rotation = Quaternion.Euler(randomDirection);
-        movementDecider = Random.Range(0, 3);
+
+        // movementDecider = Random.Range(0, 2);
+        movementDecider = 1;
 
     }
 	
