@@ -2235,6 +2235,7 @@ GameObject:
   - component: {fileID: 1990668842}
   - component: {fileID: 1990668841}
   - component: {fileID: 1990668840}
+  - component: {fileID: 1990668845}
   m_Layer: 0
   m_Name: Man
   m_TagString: Player
@@ -2292,8 +2293,8 @@ MonoBehaviour:
   despawnPoint: {fileID: 562979026}
   slideTime: 1
   slideMultiplier: 2
-  fullCollider: {fileID: 0}
-  halfCollider: {fileID: 0}
+  fullCollider: {fileID: 1990668843}
+  halfCollider: {fileID: 1990668845}
   sliding: 0
   isDead: 0
 --- !u!23 &1990668842
@@ -2342,8 +2343,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.9963617, z: 1}
-  m_Center: {x: 0, y: 0.49818087, z: 0}
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!33 &1990668844
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2352,6 +2353,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1990668838}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1990668845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990668838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2078048914
 GameObject:
   m_ObjectHideFlags: 0
