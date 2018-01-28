@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 		AsyncOperation async = SceneManager.LoadSceneAsync (sceneToLoad);
         loadBar.fillAmount = async.progress;
 		while (!async.isDone) {
-			Debug.Log (async.progress);
+
 			yield return null;
 		}
 	}
