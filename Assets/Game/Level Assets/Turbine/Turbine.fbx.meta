@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 728483c01b227514da9825691f96978a
+timeCreated: 1517075886
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Exhaust
+    100002: Fan
+    100004: Fan_Cone
+    100006: Pipe_Big
+    100008: Pipe_Small
+    100010: Pipe_T
+    100012: //RootNode
+    100014: Wheel_Handle
+    400000: Exhaust
+    400002: Fan
+    400004: Fan_Cone
+    400006: Pipe_Big
+    400008: Pipe_Small
+    400010: Pipe_T
+    400012: //RootNode
+    400014: Wheel_Handle
+    2300000: Exhaust
+    2300002: Fan
+    2300004: Fan_Cone
+    2300006: Pipe_Big
+    2300008: Pipe_Small
+    2300010: Pipe_T
+    2300012: Wheel_Handle
+    3300000: Exhaust
+    3300002: Fan
+    3300004: Fan_Cone
+    3300006: Pipe_Big
+    3300008: Pipe_Small
+    3300010: Pipe_T
+    3300012: Wheel_Handle
+    4300000: Pipe_Big
+    4300002: Pipe_Small
+    4300004: Exhaust
+    4300006: Fan
+    4300008: Fan_Cone
+    4300010: Pipe_T
+    4300012: Wheel_Handle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exhaust
+    second: {fileID: 2100000, guid: 9e59bd6fcc4d5f249aad0c29441855ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fan_Blades
+    second: {fileID: 2100000, guid: b65643a7e0a17b048a812d8944375434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fan_Center
+    second: {fileID: 2100000, guid: 6490e7cf07298874488771f629ee14e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fan_Cone
+    second: {fileID: 2100000, guid: 1024bbbcaf0003044b917770649f4323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Big
+    second: {fileID: 2100000, guid: ef90052574438e9439ccff452191a7d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Small
+    second: {fileID: 2100000, guid: 9315d256fcf308341b33b614be0ab9ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_T
+    second: {fileID: 2100000, guid: 08ccda665979b814d9880767e3852320, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel_Handle
+    second: {fileID: 2100000, guid: 22481b0a1b51e9c4fa3786c95ce14c3f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

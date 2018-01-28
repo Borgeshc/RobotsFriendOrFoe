@@ -1009,7 +1009,7 @@ Prefab:
     - target: {fileID: 223818595562216520, guid: 228553ab51ad0484895efd21c15ec83c,
         type: 2}
       propertyPath: m_RenderMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114521861582746394, guid: 228553ab51ad0484895efd21c15ec83c,
         type: 2}
@@ -1201,6 +1201,11 @@ Prefab:
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 223818595562216520, guid: 228553ab51ad0484895efd21c15ec83c,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 673148711}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 228553ab51ad0484895efd21c15ec83c, type: 2}
   m_IsPrefabParent: 0
