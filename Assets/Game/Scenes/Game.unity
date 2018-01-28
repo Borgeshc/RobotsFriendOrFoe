@@ -4442,6 +4442,14 @@ Prefab:
       propertyPath: deathSoundSource
       value: 
       objectReference: {fileID: 1492665842}
+    - target: {fileID: 4585377496370778, guid: fc10888da3a06344d842a3acc3849224, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 37.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470536444529034, guid: fc10888da3a06344d842a3acc3849224, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 37.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc10888da3a06344d842a3acc3849224, type: 2}
   m_IsPrefabParent: 0
