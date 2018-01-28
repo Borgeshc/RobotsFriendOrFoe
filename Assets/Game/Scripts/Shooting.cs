@@ -11,11 +11,13 @@ public class Shooting : MonoBehaviour
     public KeyCode fireKey;
     public int damage;
 
-    LineRenderer lineRenderer;
+    public ArcReactor_Launcher lightningEffect;
+
+   // LineRenderer lineRenderer;
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+      //  lineRenderer = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -33,23 +35,31 @@ public class Shooting : MonoBehaviour
         if (Input.GetKeyDown(fireKey))
         {
             RaycastHit hitAttack;
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, transform.position);
+            // lightningEffect.enabled = true;
+            // lineRenderer.SetPosition(0, transform.position);
+            lightningEffect.LaunchRay();
             if (Physics.Raycast(transform.position, transform.forward, out hitAttack, Mathf.Infinity))
             {
                 if (hitAttack.transform.tag.Equals("Enemy"))
                 {
                     hitAttack.transform.GetComponent<Health>().TookDamage(damage);
 
-                    lineRenderer.SetPosition(1, hitAttack.point);
+                    //   lineRenderer.SetPosition(1, hitAttack.point);
+                   // lightningEffect.shapePoints[1] = hitAttack.point;
 
                 }
-                else
-                    lineRenderer.SetPosition(1, transform.forward * 1000);
+               // else
+                   // lightningEffect.shapePoints[1] = transform.forward * 1000;
+                //else
+                //  lineRenderer.SetPosition(1, transform.forward * 1000);
             }
         }
         else if (Input.GetKeyUp(fireKey))
-            lineRenderer.enabled = false;
+        {
+           // lightningEffect.enabled = false;
+            //lineRenderer.enabled = false;
+            //  lightningEffect.SetActive(false);
+        }
     }
     
 
