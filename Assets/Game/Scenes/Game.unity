@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2464749, g: 0.2823448, b: 0.34570262, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21bb2fc56942b641a64bc9fb9a1f96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 10, y: 12, z: -51}
   speed: 5
 --- !u!124 &412858549
 Behaviour:
@@ -781,22 +782,22 @@ Prefab:
     - target: {fileID: 23915161816787398, guid: 5361b15bafc661149807c0faef56764b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23051436086054034, guid: 5361b15bafc661149807c0faef56764b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23276265241723352, guid: 5361b15bafc661149807c0faef56764b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23417717843602032, guid: 5361b15bafc661149807c0faef56764b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4241122739068286, guid: 5361b15bafc661149807c0faef56764b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2284,11 +2285,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6faa67d7fc72b42bbae90cd76feb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  baseSpeed: 3
   jumpForce: 400
   ground: {fileID: 0}
   crouchHeight: 1.75
   despawnPoint: {fileID: 562979026}
+  slideTime: 1
+  slideMultiplier: 2
+  fullCollider: {fileID: 0}
+  halfCollider: {fileID: 0}
+  sliding: 0
   isDead: 0
 --- !u!23 &1990668842
 MeshRenderer:

@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
 
             case EnemyType.DuckEnemy:
                 Spawner.numberOfDucks--;
-                man.Duck();
+                man.Slide();
                 break;
         }
 
