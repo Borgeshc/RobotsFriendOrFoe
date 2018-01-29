@@ -534,16 +534,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114941654383184298, guid: 6f637286969666d468e0285fcb71dde2,
-        type: 2}
-      propertyPath: m_Transition
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114068509011723990, guid: 6f637286969666d468e0285fcb71dde2,
-        type: 2}
-      propertyPath: m_Transition
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f637286969666d468e0285fcb71dde2, type: 2}
   m_IsPrefabParent: 0
@@ -602,55 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad1b4a7ba6b1604f8d7a638ea431fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &336865034 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82499224929532338, guid: 6f637286969666d468e0285fcb71dde2,
-    type: 2}
-  m_PrefabInternal: {fileID: 336865026}
---- !u!1 &336865035 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1513395339802276, guid: 6f637286969666d468e0285fcb71dde2,
-    type: 2}
-  m_PrefabInternal: {fileID: 336865026}
---- !u!1 &336865036 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1301289985900426, guid: 6f637286969666d468e0285fcb71dde2,
-    type: 2}
-  m_PrefabInternal: {fileID: 336865026}
---- !u!95 &336865037
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 336865035}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b5fea04ab88374488247c4cb2e223c2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &336865038
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 336865036}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b5fea04ab88374488247c4cb2e223c2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &810633807
 Prefab:
   m_ObjectHideFlags: 0
@@ -778,138 +719,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdbe7313d0306744f993bd08d24d038f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1064400843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1064400846}
-  - component: {fileID: 1064400845}
-  - component: {fileID: 1064400844}
-  m_Layer: 0
-  m_Name: AudioScientist
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1064400844
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064400843}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &1064400845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064400843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89673b68a124b2547939b5e091a831c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioclips:
-  - {fileID: 8300000, guid: 68cbec4d6582302419b1bddc336fb013, type: 3}
-  - {fileID: 8300000, guid: bf026ae652b63e04ea331ef9fa688e0d, type: 3}
-  - {fileID: 8300000, guid: 1dc5881dfa456c44cae441a7d161e8da, type: 3}
-  - {fileID: 8300000, guid: 619d08c761293b74e8fbd0987e63e946, type: 3}
-  - {fileID: 8300000, guid: 8b2a506107f0a1d4e8db8ea6bff32fb8, type: 3}
-  audioSource: {fileID: 1064400844}
-  music: {fileID: 336865034}
-  inBetweenPause: 0
-  timeToNext: 0
-  repeat: 0
---- !u!4 &1064400846
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064400843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1088136452
 Prefab:
   m_ObjectHideFlags: 0
@@ -1212,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9191284b058eef549b7108b5f04e1117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityMultiplier: 0.5
+  intensityMultiplier: 5
   generalIntensity: 0.5
   blackIntensity: 1
   whiteIntensity: 1
