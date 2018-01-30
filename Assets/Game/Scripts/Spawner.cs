@@ -57,9 +57,8 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator spawn()
     {
-
-        if (numberOfDucks + numberOfJumps < 15)
-        {
+       // if (numberOfDucks + numberOfJumps < 15)
+       // {
             spawnPointChooser1 = Random.Range(0, spawnPoints.Length);
             spawnEffects[spawnPointChooser1].SetActive(true);
             if (ObstacleGenerator.currDuck > 0 && numberOfDucks == 0)
@@ -87,19 +86,19 @@ public class Spawner : MonoBehaviour {
             yield return new WaitForSeconds(timeDelay);
 
             Instantiate(enemy, spawnPoints[spawnPointChooser1].transform.position, Quaternion.identity);
-        }
+      //  }
         isSpawning = false;
     }
 
     IEnumerator spawnone(int number)
     {
-        if (numberOfDucks + numberOfJumps < 15)
-        {
+       // if (numberOfDucks + numberOfJumps < 15)
+       // {
             spawnPointChooser2 = Random.Range(0, spawnPoints.Length);
             spawnEffects[spawnPointChooser2].SetActive(true);
             yield return new WaitForSeconds(timeDelay);
             Instantiate(enemyObject[number], spawnPoints[spawnPointChooser2].transform.position, Quaternion.identity);
-        }
+       // }
         isSpawning = false;
     }
 }
