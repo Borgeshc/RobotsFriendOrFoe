@@ -36,7 +36,9 @@ public class Spawner : MonoBehaviour {
             isSpawning = true;
             StartCoroutine(spawn());
             initalWait = 0;
-            timeRespawn = Mathf.Min(2,timeRespawn-2);
+            //timeRespawn = Mathf.Min(2,timeRespawn-.5f);
+            if (timeRespawn > .5f)
+                timeRespawn -= .05f;
         }
     }
 
