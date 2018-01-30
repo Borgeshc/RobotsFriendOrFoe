@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
 	public int sceneToLoad;
     public Image loadBar;
+    public Text loadText;
 
     bool clicked;
 
@@ -21,7 +22,9 @@ public class LevelManager : MonoBehaviour
         if (!clicked)
         {
             clicked = true;
-                if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings)
+            loadText.gameObject.SetActive(true);
+
+            if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings)
 			    sceneToLoad = 0;
 		    else
 			    sceneToLoad = GetCurrentScene () + 1;
@@ -33,11 +36,12 @@ public class LevelManager : MonoBehaviour
 	IEnumerator LoadNextScene ()
 	{
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
-
-		while (!operation.isDone)
+        
+        while (!operation.isDone)
         {
 			float progress = Mathf.Clamp01 (operation.progress / .9f);
-			loadBar.fillAmount = progress;
+			//loadBar.fillAmount = progress;
+            loadText.text = (int)(progress * 100)+ "%";
             yield return null;
         }
 	}

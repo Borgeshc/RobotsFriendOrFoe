@@ -27,8 +27,6 @@ public class DeathScene : MonoBehaviour
         floatAnim.enabled = false;
         rotater.enabled = false;
         body.parent = transform;
-     
-        print("Grabbed");
     }
 
     public void Pull()
