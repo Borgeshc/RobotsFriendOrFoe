@@ -32,13 +32,14 @@ public class LevelManager : MonoBehaviour
 
 	IEnumerator LoadNextScene ()
 	{
-            AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
-            loadBar.fillAmount = async.progress;
-            while (!async.isDone)
-            {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
 
-                yield return null;
-            }
+		while (!operation.isDone)
+        {
+			float progress = Mathf.Clamp01 (operation.progress / .9f);
+			loadBar.fillAmount = progress;
+            yield return null;
+        }
 	}
 
 	public void LoadMainMenu ()
