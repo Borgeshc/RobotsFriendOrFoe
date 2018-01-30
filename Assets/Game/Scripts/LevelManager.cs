@@ -9,29 +9,36 @@ public class LevelManager : MonoBehaviour
 	public int sceneToLoad;
     public Image loadBar;
 
+    bool clicked;
+
 	public void ReloadLevel ()
 	{
 		SceneManager.LoadScene (GetCurrentScene ());
 	}
 
 	public void LoadNextLevel ()
-	{
-		if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings)
-			sceneToLoad = 0;
-		else
-			sceneToLoad = GetCurrentScene () + 1;
+    {
+        if (!clicked)
+        {
+            clicked = true;
+                if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings)
+			    sceneToLoad = 0;
+		    else
+			    sceneToLoad = GetCurrentScene () + 1;
 
-		StartCoroutine (LoadNextScene ());
-	}
+		    StartCoroutine (LoadNextScene ());
+        }
+    }
 
 	IEnumerator LoadNextScene ()
 	{
-		AsyncOperation async = SceneManager.LoadSceneAsync (sceneToLoad);
-        loadBar.fillAmount = async.progress;
-		while (!async.isDone) {
+            AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
+            loadBar.fillAmount = async.progress;
+            while (!async.isDone)
+            {
 
-			yield return null;
-		}
+                yield return null;
+            }
 	}
 
 	public void LoadMainMenu ()
